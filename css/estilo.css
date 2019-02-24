@@ -20,6 +20,8 @@ h2 {
 
 #main-background {
     width: 100%;
+    animation: animeScale .7s ease-in-out .4s backwards;
+	-webkit-animation: animeScale .7s ease-in-out .4s backwards;
 }
 
 #logo {
@@ -27,6 +29,8 @@ h2 {
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
+    animation: animeScaleUp .7s ease-in-out .4s backwards;
+	-webkit-animation: animeScaleUp .7s ease-in-out .4s backwards;
 }
 
 .container {
@@ -184,6 +188,53 @@ section .social {
     color: #ff7e00;
 }
 
+/* Botão back to top */
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #ff7e00;
+    border-radius: 50%;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 22px;
+}
+/* Fim Botão back to top */
+
+/* Animação Keyframe no #main-background e #logo */
+@keyframes animeScale {
+	0% {
+		transform: scale(2,2);
+		-webkit-transform: scale(2,2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+		opacity: 1;
+	}
+}
+
+@keyframes animeScaleUp {
+	0% {
+		transform: scale(0.1,0.1);
+		-webkit-transform: scale(0.1,0.1);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+		opacity: 1;
+	}
+}
+/* Fim Animação Keyframe no #main-background e #logo */
+
 @media (min-width: 768px) {
     .nav-bar {
         display: flex;
@@ -303,20 +354,6 @@ section .social {
         margin: 0 auto 20px auto;
         padding: 20px;
     }
-
-    .gotopbtn {
-        position: fixed;
-        width: 50px;
-        height: 50px;
-        background: #27ae60;
-        bottom: 40px;
-        right: 50px;
-        text-decoration: none;
-        text-align: center;
-        line-height: 50px;
-        color: #fff;
-        font-size: 22px;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -360,5 +397,9 @@ section .social {
     .sobre {
         width: fit-content;
         margin: 0 20px;
+    }
+
+    .gotopbtn {
+        display: none;
     }
 }
