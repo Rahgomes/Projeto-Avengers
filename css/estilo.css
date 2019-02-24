@@ -165,16 +165,17 @@ section .social {
     text-indent: -9999px;
 }
 
+.social a:hover {
+    transition: .5s;
+    transform: scale(1.1,1.1);
+}
+
 .social a[href*="facebook.com"] {
     background-image: url(../img/facebook.png);
 }
 
 .social a[href*="twitter.com"] {
 	background-image: url(../img/twitter.png);
-}
-
-.social a[href*="plus.google.com"] {
-	background-image: url(../img/googleplus.png);
 }
 
 #direitos {
@@ -338,6 +339,7 @@ section .social {
         margin: 15px;
     }
 
+    /* Efeito cinza com contraste em .card-img */
     .card-img {
         filter: grayscale(1) contrast(6);
         transition: .5s;
@@ -348,6 +350,7 @@ section .social {
         filter: grayscale(0) contrast(1);
         transition: .5s;
     }
+    /* Fim Efeito cinza com contraste em .card-img */
 
     .persona, .ator {
         flex-grow: 0;
