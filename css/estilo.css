@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: 10px;
+}
+
+h2 {
+    font-size: 10px;
+}
+
+#main-background {
+    width: 100%;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    background-color: #00254e;
+    margin: 0 15px;
+}
+
+.nav-bar {
+    padding: 20px;
+}
+
+/* Ponto de âncoragem */
+.tabs .corpo-personagens {
+    display: none;
+}
+
+.tabs .corpo-personagens:target,
+.tabs:checked .corpo-personagens:target {
+    display: block;
+    animation: animeDown .7s ease-in-out .4s backwards;
+}
+/* Fim ponto de âncoragem */
+
+/* Animação .tabs .corpo-personagens */
+@keyframes animeDown {
+    0% {
+        transform: translateY(-50px);
+        -webkit-transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+/* Fim Animação .tabs .corpo-personagens */
+
+.personagem {
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50px;
+    margin: 15px 120px;
+}
+
+.personagem > a {
+    color: #ff7e00;
+    font-family: 'Exo 2', 'Raleway', sans-serif;
+    text-transform: uppercase;
+    display: block;
+    margin: 15px auto;
+}
+
+.corpo-personagens {
+    padding: 20px 0 20px 0;
+}
+
+.card-personagem {
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 350px;
+}
+
+.persona {
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 15px;
+}
+
+.persona > h1 {
+    color: #ff7e00;
+    font-family: 'Exo 2', 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    display: block;
+}
+
+.ator {
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin: 15px auto;
+    width: 450px
+}
+
+.ator > h2 {
+    color: #ff7e00;
+    font-family: 'Exo 2', 'Raleway', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    display: block;
+}
+
+.sobre {
+    margin: 0 auto 20px auto;
+    width: 450px;
+    border-radius: 50px;
+    padding: 40px;
+}
+
+.sobre > p {
+    color: #ff7e00;
+    font-family: 'Exo 2', 'Raleway', sans-serif;
+    line-height: 1.3em;
+    padding-bottom: 8px;
+}
+
+.rodape {
+    margin: 20px auto;
+}
+
+section .social {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.social a {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    display: block;
+    text-indent: -9999px;
+}
+
+.social a[href*="facebook.com"] {
+    background-image: url(../img/facebook.png);
+}
+
+.social a[href*="twitter.com"] {
+	background-image: url(../img/twitter.png);
+}
+
+.social a[href*="plus.google.com"] {
+	background-image: url(../img/googleplus.png);
+}
+
+#direitos {
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Exo 2', 'Raleway', sans-serif;
+}
+
+#direitos a {
+    color: #ff7e00;
+}
+
+@media (min-width: 768px) {
+    .nav-bar {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .personagem {
+        flex: 1 1 300px;
+        margin: 10px 15px;
+    }
+    
+    .personagem > a {
+        margin: 15px;
+    }
+
+    .container-flex {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .card-personagem {
+        align-self: center;
+    }
+
+    .container-flex-son {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .persona {
+        flex: 2 1 auto;
+        padding: 10px;
+    }
+
+    .ator {
+        flex: 1 1 auto;
+        width: auto;
+        padding: 10px;
+        margin: 15px;
+    }
+
+    .sobre {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    #logo {
+        transition: .5s;
+    }
+
+    #logo:hover {
+        transform: scale(1.1, 1.1);
+        transition: .5s;
+    }
+
+    .personagem {
+        flex: 1 1 250px;
+        margin: 10px;
+
+        /* Início Efeito nos botões do menu */
+        transform: translate(0, 0);
+        overflow: hidden;
+    }
+    
+    .personagem:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: -1;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        transition: 0.5s;
+    }
+    
+    .personagem:hover:before {
+        transform: rotate(0deg);
+    }
+    /* Fim Efeito nos botões do menu */
+
+    .personagem > a {
+        margin: 10px;
+    }
+
+    .personagem > a:hover {
+        transform: scale(1.1, 1.1);
+        transition: .5s;
+    }
+
+    .container-flex {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .card-personagem {
+        margin: 15px;
+    }
+
+    .card-img {
+        filter: grayscale(1) contrast(6);
+        transition: .5s;
+        border: 3px solid #ff7e00;
+    }
+
+    .card-img:hover {
+        filter: grayscale(0) contrast(1);
+        transition: .5s;
+    }
+
+    .persona, .ator {
+        flex-grow: 0;
+        margin: 0 auto 20px auto;
+        padding: 20px;
+    }
+
+    .gotopbtn {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background: #27ae60;
+        bottom: 40px;
+        right: 50px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main-background {
+        border: 8px solid #000;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .corpo-personagens {
+        margin: 60px 0 60px 0;
+    }
+
+    .personagem {
+        flex: 1 1 100px;
+        margin: 15px 25px;
+    }
+    
+    .personagem > a {
+        margin: 5px;
+    }
+
+    .flex-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-personagem {
+        padding: 0;
+    }
+
+    .container-flex-son {
+        flex-flow: column wrap;
+        padding-top: 25px;
+        align-content: center;
+    }
+
+    .sobre {
+        width: fit-content;
+        margin: 0 20px;
+    }
+}
